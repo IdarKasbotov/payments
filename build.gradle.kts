@@ -1,5 +1,6 @@
 plugins {
 	java
+	kotlin("jvm") version "2.1.0"
 	id("org.springframework.boot") version "3.5.6"
 	id("io.spring.dependency-management") version "1.1.7"
 }
@@ -12,6 +13,10 @@ java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
+}
+
+kotlin {
+	jvmToolchain(21)
 }
 
 configurations {
@@ -45,6 +50,9 @@ dependencies {
     // PostgreSQL
     implementation("org.postgresql:postgresql:42.6.0")
 
+    // Liquibase (DB migrations live in this repo, version managed by the Boot BOM)
+    implementation("org.liquibase:liquibase-core")
+
     // Springdoc
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -66,6 +74,9 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.amqp:spring-rabbit-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
+
+    // Kotlin test (mockito-kotlin per the team unit-test convention)
+	testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
 
     // JUnit
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")

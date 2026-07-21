@@ -13,8 +13,7 @@ public class CountBalancesByTypeAndDateTask {
 
     private final PaymentsService paymentsService;
 
-//    @Scheduled(cron = "${job.count-balances-by-type-and-date.cron}")
-    @Scheduled(cron = "*/5 * * * * *")
+    @Scheduled(cron = "${job.count-balances-by-type-and-date.cron}")
     public void countBalancesByTypeAndDate() {
         log.debug("Получен запрос на подсчет балансов по типу и дате");
         paymentsService.countBalancesByTypeAndDate();

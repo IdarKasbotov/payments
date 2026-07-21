@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create_schema_payments" author="i.kasbotov">
+        <sqlFile path="sql/2026-06-29-create_schema_payments.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="create_payment_table" author="i.kasbotov">
+        <sqlFile path="sql/2026-06-29-create_payment_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="create_balance_table" author="i.kasbotov">
+        <sqlFile path="sql/2026-06-29-create_balance_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="seed_sample_data" author="i.kasbotov" context="local">
+        <sqlFile path="sql/2026-06-29-seed_sample_data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>

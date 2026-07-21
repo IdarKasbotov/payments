@@ -8,6 +8,13 @@ spring:
     compose:
       enabled: true
 
+  liquibase:
+    enabled: true
+    change-log: classpath:root.changelog.xml
+    # local-default: сид-данные (context=local) накатываются локально;
+    # в проде задать LIQUIBASE_CONTEXTS=prod, чтобы катить только DDL
+    contexts: ${LIQUIBASE_CONTEXTS:local}
+
   rabbitmq:
     host: localhost
     port: 5672
@@ -25,9 +32,6 @@ spring:
 #    properties:
 #      hibernate:
 #        format_sql: true
-  sql:
-    init:
-      mode: always
 
 job:
   count-balances-by-type-and-date:
