@@ -54,7 +54,7 @@ dependencies {
     implementation("org.liquibase:liquibase-core")
 
     // Springdoc
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     // mapstruct
@@ -63,7 +63,6 @@ dependencies {
 
     // Lombok
 	compileOnly("org.projectlombok:lombok:${property("lombokVersion")}")
-    annotationProcessor("org.projectlombok:lombok:${property("lombokVersion")}")
     annotationProcessor("org.projectlombok:lombok:${property("lombokVersion")}")
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:${property("lombokMapstructBindingVersion")}")
 

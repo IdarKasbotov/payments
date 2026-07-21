@@ -44,7 +44,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
         jdbcTemplate.update(
                 query,
                 new MapSqlParameterSource()
-                        .addValue("sum", sum, Types.DOUBLE)
+                        .addValue("sum", sum, Types.DECIMAL)
                         .addValue("id", id, Types.BIGINT)
         );
     }
